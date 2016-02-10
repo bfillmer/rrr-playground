@@ -1,11 +1,4 @@
 
-/**
- * The main reason this exists is to decouple events from the store
- * aside from during the final mapping of the event. Events can exist
- * without interaction with the store. (Walk into a bank, but the deposit
- * fails, store (account) doesn't care or need to know.)
- */
-
 import { ADD_ITEM, LOAD_INITIAL_ITEMS } from 'constants'
 import { store } from 'store'
 
@@ -32,6 +25,7 @@ export const itemEvents = {
     store.dispatch(addItemAction(payload.text))
   },
   LOAD_INITIAL_ITEMS: () => {
+    // @TODO: Add error handling etc.
     getItems.then((res) => {
       store.dispatch(loadInitialItemsAction(res))
     })
