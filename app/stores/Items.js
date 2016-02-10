@@ -1,6 +1,9 @@
 
 import { List } from 'immutable'
-import { ADD_ITEM, LOAD_INITIAL_ITEMS } from 'constants'
+import {
+  ADD_ITEM,
+  LOAD_INITIAL_ITEMS
+} from 'constants'
 
 // Initial State for Items
 export const initialItemsState = new List()
@@ -21,14 +24,9 @@ export const loadInitialItemsAction = (json) => {
 }
 
 // Items Reducers
-const addItemReducer = (state, action) => {
-  return state.push(action.text)
-}
+const addItemReducer = (state, action) => state.push(action.text)
 
-const loadInitialItemsReducer = (state, action) => {
-  const newItems = action.json.items
-  return state.merge(newItems)
-}
+const loadInitialItemsReducer = (state, action) => state.merge(action.json.items)
 
 // Map Items Reducers
 export const itemReducers = {

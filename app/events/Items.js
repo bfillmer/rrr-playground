@@ -21,13 +21,10 @@ const eventFormat = (type, payload = {}) => {
 }
 
 // Add Item Event
-export const addItemEvent = (text) => {
-  return eventFormat(ADD_ITEM, { text })
-}
+export const addItemEvent = (text) => eventFormat(ADD_ITEM, { text })
 
-export const loadInitialItemsEvent = () => {
-  return eventFormat(LOAD_INITIAL_ITEMS)
-}
+// Load Initial Items
+export const loadInitialItemsEvent = () => eventFormat(LOAD_INITIAL_ITEMS)
 
 // Mapping
 export const itemEvents = {
