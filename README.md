@@ -35,3 +35,4 @@ Go to http://localhost:8080 and you should see the application.
 * Sub-divide components and play with a second set of events/redux reducers.
 * Add testing with tape, linting, css pre-processing. The usual pieces from other boilerplates.
 * Is it worth optimizing the duplication between certain events and the Redux actions? Events can exist without a Redux action, but not the other way around. Perhaps standardizing the action as a sub-property of the event and building the Redux action from that automatically to reduce duplicate effort.
+* Leverage reselect for acting against the state stream, thus allowing each component (container level most likely) to determine what's data requirements are.

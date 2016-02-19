@@ -26,6 +26,7 @@ export const itemEvents = {
   },
   LOAD_INITIAL_ITEMS: () => {
     // @TODO: Add error handling etc.
+    // @TODO: Fire off event for the dispatch of actual data, decouple slightly from the async.
     getItems.then((res) => {
       store.dispatch(loadInitialItemsAction(res))
     })
